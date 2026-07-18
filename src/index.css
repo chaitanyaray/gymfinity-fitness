@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rawBg: #050505;
+  --color-rawSurface: #101010;
+  --color-rawCard: #181818;
+  --color-rawPrimary: #FF5A1F;
+  --color-rawSecondary: #FFC107;
+  --color-rawAccent: #00F5D4;
+  --color-rawWhite: #FFFFFF;
+  --color-rawMuted: #A5A5A5;
+
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+
+  --shadow-glow-orange: 0 0 15px rgba(255, 90, 31, 0.4);
+  --shadow-glow-orange-lg: 0 0 25px rgba(255, 90, 31, 0.6);
+  --shadow-glow-teal: 0 0 15px rgba(0, 245, 212, 0.4);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-float-1: float1 6s ease-in-out infinite;
+  --animate-float-2: float2 5s ease-in-out infinite;
+  --animate-float-3: float3 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@utility glass-card {
+  background: rgba(24, 24, 24, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+
+  &:hover {
+    border-color: rgba(255, 90, 31, 0.3);
+    box-shadow: 0 15px 40px -5px rgba(255, 90, 31, 0.15), 0 0 15px rgba(255, 90, 31, 0.05);
+  }
+}
+
+@utility glass-card-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@utility outline-glow-text {
+  color: transparent;
+  -webkit-text-stroke: 2px #FF5A1F;
+  text-shadow: 0 0 20px rgba(255, 90, 31, 0.4);
+  filter: drop-shadow(0 0 10px rgba(255, 90, 31, 0.5));
+}
+
+@utility outline-text-white {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+}
+
+@utility bg-gradient-orange {
+  background: linear-gradient(135deg, #FF5A1F 0%, #FFC107 100%);
+}
+
+@utility bg-gradient-dark {
+  background: linear-gradient(180deg, #101010 0%, #050505 100%);
+}
+
+@utility shadow-glow-orange {
+  box-shadow: 0 0 15px rgba(255, 90, 31, 0.4);
+}
+
+@utility shadow-glow-orange-lg {
+  box-shadow: 0 0 25px rgba(255, 90, 31, 0.6);
+}
+
+/* Base styles and custom scrollbar resets */
+@layer base {
+  html, body {
+    background-color: #050505;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #181818;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF5A1F;
+  }
+
+  ::selection {
+    background-color: #FF5A1F;
+    color: #FFFFFF;
+  }
+
+  .custom-cursor-active {
+    cursor: none;
+  }
+  .custom-cursor-active a, 
+  .custom-cursor-active button, 
+  .custom-cursor-active input, 
+  .custom-cursor-active select, 
+  .custom-cursor-active textarea, 
+  .custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}
