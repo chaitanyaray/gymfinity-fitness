@@ -7,6 +7,7 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Pages
 import Home from './pages/Home';
@@ -66,7 +67,7 @@ export default function App() {
 
               {/* Loader percentage */}
               <div className="font-mono text-5xl sm:text-6xl font-extrabold text-rawWhite tracking-tighter">
-                {String(loadProgress).padStart(3, '0')}%
+                {loadProgress}%
               </div>
 
               {/* Progress Line */}
@@ -94,6 +95,9 @@ export default function App() {
 
             {/* Global custom cursor */}
             <CustomCursor />
+
+            {/* Floating WhatsApp button */}
+            <WhatsAppButton />
 
             {/* Navbar Shell */}
             <Navbar />
